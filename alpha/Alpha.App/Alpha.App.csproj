@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Alpha.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Intentionally vulnerable: Snyk High advisories (AiTM / information exposure).
+         Also provides the SqlClient types used by the SQL-injection sink below. -->
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.0.19239.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alpha.Lib\Alpha.Lib.csproj" />
+  </ItemGroup>
+
+</Project>

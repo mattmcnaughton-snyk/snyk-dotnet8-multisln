@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Alpha.Lib</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Intentionally vulnerable: Snyk High (StackOverflow / insecure defaults), fixed in 13.0.1. -->
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+  </ItemGroup>
+
+</Project>
