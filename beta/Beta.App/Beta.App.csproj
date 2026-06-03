@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Beta.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Intentionally vulnerable: Snyk High XXE (CVE-2018-1285), fixed in 2.0.10. -->
+    <PackageReference Include="log4net" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Beta.Lib\Beta.Lib.csproj" />
+  </ItemGroup>
+
+</Project>
