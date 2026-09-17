@@ -12,6 +12,8 @@
     <!-- Intentionally vulnerable: Snyk High advisories (AiTM / information exposure).
          Also provides the SqlClient types used by the SQL-injection sink below. -->
     <PackageReference Include="Microsoft.Data.SqlClient" Version="1.0.19239.1" />
+    <!-- Provides ILogger / LoggerExtensions.LogError, the LogForging sink under test. -->
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -21,6 +21,10 @@ public static class Program
         string userId = args.Length > 0 ? args[0] : Console.ReadLine() ?? string.Empty;
 
         LookupUser(userId);
+
+        using var loggerFactory = Microsoft.Extensions.Logging.LoggerFactory.Create(_ => { });
+        LogForgingDemo.Run(loggerFactory.CreateLogger("Alpha.App"), args);
+
         Console.WriteLine(HashPassword(userId));
         Console.WriteLine($"Authenticating with key {ApiKey}");
         Console.WriteLine(OrderRepository.Describe());
