@@ -41,5 +41,16 @@ namespace Alpha.App.Controllers
             await Task.CompletedTask;
             return Ok(new PaymentInfoResponse { Amount = 0m });
         }
+
+        // Second sink at a different log level, to check whether the FQN and any extension
+        // registered against it are per-method or shared across ILogger log levels.
+        [HttpGet("PaymentInfoByAgentId", Name = "GetAgentPaymentInfoByAgentId")]
+        public async Task<IActionResult> GetPaymentInfoByAgentId([FromQuery] GetPaymentInfoRequest request)
+        {
+            log.LogError("GET GetPaymentInfoByAgentId failed: {Request}", request.ToJson());
+
+            await Task.CompletedTask;
+            return Ok(new PaymentInfoResponse { Amount = 0m });
+        }
     }
 }
